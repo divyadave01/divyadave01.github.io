@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JARVIS Voice Assistant Project | Dave Divya</title>
+    <meta name="description" content="Detailed overview of JARVIS, a custom-built personal voice assistant created by Dave Divya using Python and NLP.">
+    
+    <!-- Link to your main stylesheet. Note the "../" because we are in a subfolder -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- Project Page Specific Styles -->
+    <style>
+        .project-hero {
+            padding: 6rem 0 3rem;
+            text-align: center;
+            background-color: var(--bg-secondary);
+        }
+        .project-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .project-content {
+            padding: 4rem 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .project-content h2 {
+            color: var(--primary-color);
+            margin: 2rem 0 1rem;
+        }
+        .project-content p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        .project-content img {
+            width: 100%;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border: 1px solid var(--border-color);
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Simple Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="nav-logo">← Back to Portfolio</a>
+        </nav>
+    </header>
+
+    <section class="project-hero">
+        <div class="container">
+            <h1>JARVIS - Personal Voice Assistant</h1>
+            <div class="project-tags" style="justify-content: center;">
+                <span>Python</span><span>Speech Recognition</span><span>NLP</span><span>Automation</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="project-content container">
+        <h2>The Problem</h2>
+        <p>I wanted to understand how natural language processing and speech-to-text APIs work in real-time. Most existing voice assistants are black boxes. My goal was to build one from scratch to understand the underlying architecture of voice recognition and system automation.</p>
+
+        <h2>The Solution</h2>
+        <p>I developed JARVIS, a Python-based voice assistant that listens for wake words and executes system commands. It can open applications, search the web, tell the time, and automate repetitive daily tasks. By utilizing libraries like <code>SpeechRecognition</code> and <code>pyttsx3</code>, I built an interactive interface that responds to voice commands with minimal latency.</p>
+
+        <!-- Replace with your actual screenshot later -->
+        <img src="../images/jarvis-detail.jpg" alt="JARVIS Voice Assistant Code Interface" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodPSI0MDAiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlNWU3ZWIiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM5Y2EzYWYiPkphcnZpcyBTY3JlZW5zaG90PC90ZXh0Pjwvc3ZnPg=='">
+
+        <h2>Key Features</h2>
+        <ul>
+            <li>Real-time speech recognition and text-to-speech synthesis.</li>
+            <li>System automation (opening apps, checking system stats).</li>
+            <li>Web scraping for fetching real-time information.</li>
+        </ul>
+
+        <h2>What I Learned</h2>
+        <p>Building JARVIS taught me a lot about handling asynchronous tasks in Python and dealing with the limitations of free speech recognition APIs. It solidified my understanding of object-oriented design, as I structured the assistant into modular "skills" for easy expansion.</p>
+
+    </main>
+</body>
+</html>

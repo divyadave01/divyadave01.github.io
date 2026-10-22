@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | [TO FILL]</title>
+    <meta name="robots" content="noindex"> <!-- Don't index 404 pages -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+        .error-code {
+            font-size: 8rem;
+            font-family: var(--font-heading);
+            color: var(--primary-color);
+            margin: 0;
+            line-height: 1;
+        }
+        .error-msg {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-main);
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1 class="error-code">404</h1>
+        <h2 class="error-msg">Oops! Page not found.</h2>
+        <p style="margin-bottom: 2rem; color: var(--text-muted);">The page you are looking for doesn't exist or has been moved.</p>
+        <a href="/" class="btn btn-primary">Go Back Home</a>
+    </div>
+</body>
+</html>
