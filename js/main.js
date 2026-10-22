@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ==========================================================================
        1. Dark/Light Mode Theme Toggle
        ========================================================================== */
-    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleBtn = document.querySelector('#theme-toggle .icon');
     const htmlElement = document.documentElement;
     
     // Check for saved user preference, otherwise use system preference
@@ -12,21 +12,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
         htmlElement.setAttribute('data-theme', 'dark');
-        themeToggleBtn.textContent = '☀️'; // Sun icon for switching to light
+        themeToggleBtn.innerText = '☀️'; 
     } else {
         htmlElement.setAttribute('data-theme', 'light');
-        themeToggleBtn.textContent = '🌙'; // Moon icon for switching to dark
+        themeToggleBtn.innerText = '🌙'; 
     }
 
-    // Toggle theme on button click
-    themeToggleBtn.addEventListener('click', () => {
+    themeToggleBtn.parentElement.addEventListener('click', () => {
         if (htmlElement.getAttribute('data-theme') === 'light') {
             htmlElement.setAttribute('data-theme', 'dark');
-            themeToggleBtn.textContent = '☀️';
+            themeToggleBtn.innerText = '☀️';
             localStorage.setItem('theme', 'dark');
         } else {
             htmlElement.setAttribute('data-theme', 'light');
-            themeToggleBtn.textContent = '🌙';
+            themeToggleBtn.innerText = '🌙';
             localStorage.setItem('theme', 'light');
         }
     });
