@@ -872,3 +872,8 @@ a:focus-visible, button:focus-visible {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
 }
+.timeline-list {
+    list-style-type: disc;
+    margin: 10px 0 1rem 20px;
+    color: var(--text-muted);
+}

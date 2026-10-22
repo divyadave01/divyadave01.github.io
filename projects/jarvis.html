@@ -3,86 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JARVIS Voice Assistant Project | Dave Divya</title>
-    <meta name="description" content="Detailed overview of JARVIS, a custom-built personal voice assistant created by Dave Divya using Python and NLP.">
-    
-    <!-- Link to your main stylesheet. Note the "../" because we are in a subfolder -->
-    <link rel="stylesheet" href="../css/style.css">
-    
-    <!-- Project Page Specific Styles -->
+    <title>JARVIS Voice Assistant Project | Divya Dave</title>
+    <meta name="description" content="Detailed overview of JARVIS, a custom-built personal voice assistant created by Divya Dave using Python and NLP.">
+    <link rel="stylesheet" href="../css/style.css?v=3">
     <style>
-        .project-hero {
-            padding: 6rem 0 3rem;
-            text-align: center;
-            background-color: var(--bg-secondary);
-        }
-        .project-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        .project-content {
-            padding: 4rem 0;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .project-content h2 {
-            color: var(--primary-color);
-            margin: 2rem 0 1rem;
-        }
-        .project-content p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-        .project-content img {
-            width: 100%;
-            border-radius: 8px;
-            margin: 2rem 0;
-            border: 1px solid var(--border-color);
-        }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 2rem;
-            font-weight: 600;
-            color: var(--primary-color);
-        }
+        .project-hero { padding: 6rem 0 3rem; text-align: center; background-color: var(--bg-secondary); border-bottom: 1px solid var(--border-color); }
+        .project-hero h1 { font-size: 3rem; margin-bottom: 1rem; color: var(--text-main); }
+        .project-content-wrapper { display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; padding: 4rem 0; max-width: 1100px; margin: 0 auto; align-items: start; }
+        .project-main-text h2 { color: var(--primary-color); margin: 2rem 0 1rem; font-size: 1.8rem; }
+        .project-main-text h2:first-child { margin-top: 0; }
+        .project-main-text p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.8; }
+        .project-sidebar { background-color: var(--bg-secondary); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color); position: sticky; top: 100px; }
+        .snapshot-item { margin-bottom: 1.5rem; }
+        .snapshot-item h4 { color: var(--primary-color); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; }
+        .snapshot-item p { color: var(--text-main); font-weight: 500; font-size: 1.05rem; }
+        @media (max-width: 768px) { .project-content-wrapper { grid-template-columns: 1fr; } .project-sidebar { position: relative; top: 0; } }
     </style>
 </head>
 <body>
-    <!-- Simple Header -->
     <header class="header">
         <nav class="nav container">
-            <a href="../index.html" class="nav-logo">← Back to Portfolio</a>
+            <a href="../index.html" class="nav-logo" style="font-size: 1.2rem;">← Back to Portfolio</a>
         </nav>
     </header>
 
     <section class="project-hero">
         <div class="container">
             <h1>JARVIS - Personal Voice Assistant</h1>
-            <div class="project-tags" style="justify-content: center;">
-                <span>Python</span><span>Speech Recognition</span><span>NLP</span><span>Automation</span>
+            <div class="project-tags" style="justify-content: center; margin-top: 1rem;">
+                <span>Python</span><span>Speech Recognition</span><span>NLP</span><span>REST APIs</span>
             </div>
         </div>
     </section>
 
-    <main class="project-content container">
-        <h2>The Problem</h2>
-        <p>I wanted to understand how natural language processing and speech-to-text APIs work in real-time. Most existing voice assistants are black boxes. My goal was to build one from scratch to understand the underlying architecture of voice recognition and system automation.</p>
-
-        <h2>The Solution</h2>
-        <p>I developed JARVIS, a Python-based voice assistant that listens for wake words and executes system commands. It can open applications, search the web, tell the time, and automate repetitive daily tasks. By utilizing libraries like <code>SpeechRecognition</code> and <code>pyttsx3</code>, I built an interactive interface that responds to voice commands with minimal latency.</p>
-
-        <h2>Key Features</h2>
-        <ul>
-            <li>Real-time speech recognition and text-to-speech synthesis.</li>
-            <li>System automation (opening apps, checking system stats).</li>
-            <li>Web scraping for fetching real-time information.</li>
-        </ul>
-
-        <h2>What I Learned</h2>
-        <p>Building JARVIS taught me a lot about handling asynchronous tasks in Python and dealing with the limitations of free speech recognition APIs. It solidified my understanding of object-oriented design, as I structured the assistant into modular "skills" for easy expansion.</p>
-
+    <main class="project-content-wrapper container">
+        <article class="project-main-text">
+            <h2>The Problem</h2>
+            <p>Existing commercial voice assistants (like Siri or Alexa) are closed-source black boxes. They lack deep system customization, making it difficult to integrate them directly into local workflows or automate specific, niche system tasks without relying on third-party servers.</p>
+            <h2>The Solution</h2>
+            <p>I engineered JARVIS, a Python-based AI assistant built from scratch. The application continuously listens for wake words, processes the audio using speech recognition APIs, and executes commands. It can automate daily workflows, open applications, search the web, and fetch real-time data via third-party REST APIs.</p>
+            <p>The architecture is built using Object-Oriented Programming (OOP) principles. I structured the code modularly, treating every feature (like telling the time or fetching weather) as a separate "skill." This allows for easy scalability and addition of new features without breaking the core logic.</p>
+            <h2>What I Learned</h2>
+            <p>Building JARVIS taught me how to handle asynchronous audio streams in Python. I also gained practical experience dealing with the latency limitations of free speech-to-text APIs, which required me to implement custom error handling and retry logic. Ultimately, it solidified my understanding of modular software design.</p>
+        </article>
+        <aside class="project-sidebar">
+            <div class="snapshot-item"><h4>My Role</h4><p>Solo Developer</p></div>
+            <div class="snapshot-item"><h4>Timeline</h4><p>Self-Directed Project</p></div>
+            <div class="snapshot-item"><h4>Core Tech</h4><p>Python, pyttsx3, NLP</p></div>
+            <div class="snapshot-item" style="margin-bottom: 0;"><h4>Key Focus</h4><p>Automation &amp; API Integration</p></div>
+        </aside>
     </main>
 </body>
 </html>

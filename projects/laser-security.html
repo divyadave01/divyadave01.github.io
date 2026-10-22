@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Laser Security System | Divya Dave</title>
+    <meta name="description" content="Hardware-software tripwire security system developed by Divya Dave using Arduino and sensors.">
+    <link rel="stylesheet" href="../css/style.css?v=3">
+    <style>
+        .project-hero { padding: 6rem 0 3rem; text-align: center; background-color: var(--bg-secondary); border-bottom: 1px solid var(--border-color); }
+        .project-hero h1 { font-size: 3rem; margin-bottom: 1rem; color: var(--text-main); }
+        .project-content-wrapper { display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; padding: 4rem 0; max-width: 1100px; margin: 0 auto; align-items: start; }
+        .project-main-text h2 { color: var(--primary-color); margin: 2rem 0 1rem; font-size: 1.8rem; }
+        .project-main-text h2:first-child { margin-top: 0; }
+        .project-main-text p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.8; }
+        .project-sidebar { background-color: var(--bg-secondary); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color); position: sticky; top: 100px; }
+        .snapshot-item { margin-bottom: 1.5rem; }
+        .snapshot-item h4 { color: var(--primary-color); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; }
+        .snapshot-item p { color: var(--text-main); font-weight: 500; font-size: 1.05rem; }
+        @media (max-width: 768px) { .project-content-wrapper { grid-template-columns: 1fr; } .project-sidebar { position: relative; top: 0; } }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="nav-logo" style="font-size: 1.2rem;">← Back to Portfolio</a>
+        </nav>
+    </header>
+
+    <section class="project-hero">
+        <div class="container">
+            <h1>IoT Laser Security System</h1>
+            <div class="project-tags" style="justify-content: center; margin-top: 1rem;">
+                <span>Arduino/ESP32</span><span>C++</span><span>LDR Sensor</span><span>Circuit Prototyping</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="project-content-wrapper container">
+        <article class="project-main-text">
+            <h2>The Problem</h2>
+            <p>Traditional security alarms are prone to false triggers and can be easily bypassed by intruders. Many low-cost solutions lack the reliability required for consistent perimeter security.</p>
+            <h2>The Solution</h2>
+            <p>Designed and prototyped a hardware-software tripwire system using a laser transmitter and a Light Dependent Resistor (LDR) sensor. When the laser beam is interrupted by an object or person, the microcontroller instantly detects the voltage drop and triggers a localized buzzer alarm.</p>
+            <p>The system is designed to be low-cost, highly reliable, and easy to deploy across doorways or perimeters. It includes a reset mechanism to silence the alarm once the breach has been addressed.</p>
+            <h2>What I Learned</h2>
+            <p>This project provided hands-on experience with analog-to-digital signal processing. I learned how to debounce sensor inputs in code to prevent false alarms caused by sudden environmental changes (like shadows or dust). I also gained practical skills in circuit prototyping and hardware-software integration.</p>
+        </article>
+        <aside class="project-sidebar">
+            <div class="snapshot-item"><h4>My Role</h4><p>Embedded Developer</p></div>
+            <div class="snapshot-item"><h4>Timeline</h4><p>Hardware Prototype</p></div>
+            <div class="snapshot-item"><h4>Core Tech</h4><p>C++, Microcontrollers, Sensors</p></div>
+            <div class="snapshot-item" style="margin-bottom: 0;"><h4>Key Focus</h4><p>Hardware-Software Integration</p></div>
+        </aside>
+    </main>
+</body>
+</html>

@@ -3,47 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Book Store Project | Dave Divya</title>
-    <meta name="description" content="An online digital bookstore featuring a dynamic catalog and shopping cart.">
-    <link rel="stylesheet" href="../css/style.css">
+    <title>E-Book Store Project | Divya Dave</title>
+    <meta name="description" content="An online digital bookstore featuring a dynamic catalog and shopping cart created by Divya Dave.">
+    <link rel="stylesheet" href="../css/style.css?v=3">
     <style>
-        .project-hero { padding: 6rem 0 3rem; text-align: center; background-color: var(--bg-secondary); }
-        .project-hero h1 { font-size: 3rem; margin-bottom: 1rem; }
-        .project-content { padding: 4rem 0; max-width: 800px; margin: 0 auto; }
-        .project-content h2 { color: var(--primary-color); margin: 2rem 0 1rem; }
-        .project-content p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.8; }
-        .project-content img { width: 100%; border-radius: 8px; margin: 2rem 0; border: 1px solid var(--border-color); }
+        .project-hero { padding: 6rem 0 3rem; text-align: center; background-color: var(--bg-secondary); border-bottom: 1px solid var(--border-color); }
+        .project-hero h1 { font-size: 3rem; margin-bottom: 1rem; color: var(--text-main); }
+        .project-content-wrapper { display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; padding: 4rem 0; max-width: 1100px; margin: 0 auto; align-items: start; }
+        .project-main-text h2 { color: var(--primary-color); margin: 2rem 0 1rem; font-size: 1.8rem; }
+        .project-main-text h2:first-child { margin-top: 0; }
+        .project-main-text p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.8; }
+        .project-sidebar { background-color: var(--bg-secondary); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color); position: sticky; top: 100px; }
+        .snapshot-item { margin-bottom: 1.5rem; }
+        .snapshot-item h4 { color: var(--primary-color); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; }
+        .snapshot-item p { color: var(--text-main); font-weight: 500; font-size: 1.05rem; }
+        @media (max-width: 768px) { .project-content-wrapper { grid-template-columns: 1fr; } .project-sidebar { position: relative; top: 0; } }
     </style>
 </head>
 <body>
     <header class="header">
         <nav class="nav container">
-            <a href="../index.html" class="nav-logo">← Back to Portfolio</a>
+            <a href="../index.html" class="nav-logo" style="font-size: 1.2rem;">← Back to Portfolio</a>
         </nav>
     </header>
 
     <section class="project-hero">
         <div class="container">
             <h1>E-Book Store</h1>
-            <div class="project-tags" style="justify-content: center;">
-                <span>Web App</span><span>Frontend</span><span>E-Commerce</span><span>SQL</span>
+            <div class="project-tags" style="justify-content: center; margin-top: 1rem;">
+                <span>HTML/CSS/JS</span><span>E-Commerce</span><span>SQL</span><span>CRUD</span>
             </div>
         </div>
     </section>
 
-    <main class="project-content container">
-        <h2>The Problem</h2>
-        <p>Buying physical books can be expensive and space-consuming. I wanted to build a platform where users can easily browse and purchase digital books.</p>
-
-        <h2>The Solution</h2>
-        <p>I built a fully functional E-Book Store interface. It features a dynamic catalog that pulls data from a database, a search bar to filter books by title or author, and a functional shopping cart that calculates totals dynamically.</p>
-
-        <h2>Key Features</h2>
-        <ul>
-            <li>Dynamic product catalog.</li>
-            <li>Search and filter functionality.</li>
-            <li>Shopping cart with real-time price calculation.</li>
-        </ul>
+    <main class="project-content-wrapper container">
+        <article class="project-main-text">
+            <h2>The Problem</h2>
+            <p>Readers need a seamless, centralized platform to browse, search, and purchase digital books without the clutter and overhead of physical retail stores.</p>
+            <h2>The Solution</h2>
+            <p>Developed a full-stack e-commerce web application. The platform features a dynamic product catalog that pulls from a database, secure user authentication, and a functional shopping cart that calculates totals in real-time. The database is optimized for fast search queries to ensure a smooth user experience.</p>
+            <p>The frontend is built to be fully responsive, ensuring that users can browse and purchase books effortlessly from their mobile devices or desktops. The backend handles secure data transactions and inventory management.</p>
+            <h2>What I Learned</h2>
+            <p>Managing state across multiple pages (specifically the shopping cart logic) was a key learning outcome. I also gained valuable experience in designing a normalized relational database schema to handle users, products, and orders efficiently.</p>
+        </article>
+        <aside class="project-sidebar">
+            <div class="snapshot-item"><h4>My Role</h4><p>Full-Stack Developer</p></div>
+            <div class="snapshot-item"><h4>Timeline</h4><p>Academic Project</p></div>
+            <div class="snapshot-item"><h4>Core Tech</h4><p>Web App, SQL Database</p></div>
+            <div class="snapshot-item" style="margin-bottom: 0;"><h4>Key Focus</h4><p>Database Design &amp; UI Logic</p></div>
+        </aside>
     </main>
 </body>
 </html>

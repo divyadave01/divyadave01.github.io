@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Campus Network Project | Divya Dave</title>
+    <meta name="description" content="A simulated secure enterprise network topology featuring VLANs and ACLs designed by Divya Dave.">
+    <link rel="stylesheet" href="../css/style.css?v=3">
+    <style>
+        .project-hero { padding: 6rem 0 3rem; text-align: center; background-color: var(--bg-secondary); border-bottom: 1px solid var(--border-color); }
+        .project-hero h1 { font-size: 3rem; margin-bottom: 1rem; color: var(--text-main); }
+        .project-content-wrapper { display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; padding: 4rem 0; max-width: 1100px; margin: 0 auto; align-items: start; }
+        .project-main-text h2 { color: var(--primary-color); margin: 2rem 0 1rem; font-size: 1.8rem; }
+        .project-main-text h2:first-child { margin-top: 0; }
+        .project-main-text p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.8; }
+        .project-sidebar { background-color: var(--bg-secondary); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color); position: sticky; top: 100px; }
+        .snapshot-item { margin-bottom: 1.5rem; }
+        .snapshot-item h4 { color: var(--primary-color); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; }
+        .snapshot-item p { color: var(--text-main); font-weight: 500; font-size: 1.05rem; }
+        @media (max-width: 768px) { .project-content-wrapper { grid-template-columns: 1fr; } .project-sidebar { position: relative; top: 0; } }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="nav-logo" style="font-size: 1.2rem;">← Back to Portfolio</a>
+        </nav>
+    </header>
+
+    <section class="project-hero">
+        <div class="container">
+            <h1>Secure Campus Network</h1>
+            <div class="project-tags" style="justify-content: center; margin-top: 1rem;">
+                <span>Cisco Packet Tracer</span><span>VLANs</span><span>ACLs</span><span>OSPF Routing</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="project-content-wrapper container">
+        <article class="project-main-text">
+            <h2>The Problem</h2>
+            <p>Large campus networks require strict security protocols to prevent unauthorized access, data breaches, and broadcast storms. A flat network architecture is highly vulnerable to internal threats and traffic congestion.</p>
+            <h2>The Solution</h2>
+            <p>Simulated a secure enterprise network topology using Cisco Packet Tracer. I segmented the network into Virtual LANs (VLANs) to separate student, faculty, and administrative traffic, ensuring that sensitive data remains isolated.</p>
+            <p>I configured Access Control Lists (ACLs) to act as firewalls, blocking unauthorized IP ranges from accessing specific network segments. Additionally, I implemented OSPF routing for efficient data flow between different subnets and VLANs.</p>
+            <h2>What I Learned</h2>
+            <p>This project allowed me to apply network security principles in a simulated environment. I gained practical experience in troubleshooting connectivity issues using command-line tools like <code>ping</code> and <code>traceroute</code>, and learned the importance of subnetting and route summarization.</p>
+        </article>
+        <aside class="project-sidebar">
+            <div class="snapshot-item"><h4>My Role</h4><p>Network Designer</p></div>
+            <div class="snapshot-item"><h4>Timeline</h4><p>Network Simulation</p></div>
+            <div class="snapshot-item"><h4>Core Tech</h4><p>Packet Tracer, Routing, Switching</p></div>
+            <div class="snapshot-item" style="margin-bottom: 0;"><h4>Key Focus</h4><p>Network Security &amp; Topology</p></div>
+        </aside>
+    </main>
+</body>
+</html>
