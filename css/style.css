@@ -2,14 +2,14 @@
    CSS Variables (Light & Dark Mode Colors)
    ========================================================================== */
 :root {
-    /* Colors */
-    --primary-color: #606c38; /* Olive Leaf */
+    /* Forcing the Deep Green Theme */
+    --primary-color: #dda15e; /* Sunlit Clay (pops on dark green) */
     --primary-hover: #bc6c25; /* Copperwood */
-    --text-main: #283618;     /* Black Forest */
-    --text-muted: #4b5540;    
-    --bg-main: #fefae0;       /* Cornsilk */
-    --bg-secondary: #f2edd1;  
-    --border-color: #d4cfa9;  
+    --text-main: #fefae0;     /* Cornsilk (Light text) */
+    --text-muted: #a3a88f;    /* Muted olive-grey for secondary text */
+    --bg-main: #283618;       /* Black Forest (Deep Green background) */
+    --bg-secondary: #1e2a12;  /* Darker green for section backgrounds */
+    --border-color: #3b4d26;  /* Forest green border */
     
     /* Typography */
     --font-heading: 'Poppins', sans-serif;
@@ -18,16 +18,6 @@
     /* Spacing & Layout */
     --container-width: 1100px;
     --transition: all 0.3s ease;
-}
-
-[data-theme="dark"] {
-    --primary-color: #dda15e; /* Sunlit Clay */
-    --primary-hover: #bc6c25; /* Copperwood */
-    --text-main: #fefae0;     /* Cornsilk */
-    --text-muted: #a3a88f;    
-    --bg-main: #283618;       /* Black Forest */
-    --bg-secondary: #1e2a12;  
-    --border-color: #3b4d26;  
 }
 
 /* ==========================================================================
@@ -39,9 +29,15 @@
     box-sizing: border-box;
 }
 
+/* ==========================================================================
+   Fix for Sticky Header covering section titles
+   ========================================================================== */
 html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* Offset for sticky header */
+    scroll-padding-top: 80px; /* Matches the exact height of your header */
+}
+
+section[id] {
+    scroll-margin-top: 0px; /* Removes the extra gap */
 }
 
 body {
@@ -158,7 +154,7 @@ a:focus-visible, button:focus-visible {
     width: 100%;
     background-color: var(--bg-main);
     border-bottom: 1px solid var(--border-color);
-    z-index: 100;
+    z-index: 9999; /* THIS FIXES THE CLICKING ISSUE */
     transition: background-color var(--transition);
 }
 
@@ -898,4 +894,319 @@ a:focus-visible, button:focus-visible {
     .about-facts li {
         font-size: 0.95rem;
     }
+}
+/* Required for GSAP 3D Hover Effects */
+.project-card, .skill-card, .cert-card {
+    transform-style: preserve-3d;
+    will-change: transform; /* Optimizes performance */
+}
+/* ==========================================================================
+   Professional Scroll Reveal Animations
+   ========================================================================== */
+.section, .project-card, .skill-card, .cert-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* This class is added by JavaScript when the element is scrolled into view */
+.section.active, .project-card.active, .skill-card.active, .cert-card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* To make sure the Hero section is visible immediately */
+.hero {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* ==========================================================================
+   Safe Scroll Reveal Animations
+   ========================================================================== */
+.section, .project-card, .skill-card, .cert-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section.active, .project-card.active, .skill-card.active, .cert-card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ensure Hero is always visible immediately */
+.hero {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+/* ==========================================================================
+   Smooth Hover Lift for Cards
+   ========================================================================== */
+.project-card, .skill-card, .cert-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover, .skill-card:hover, .cert-card:hover {
+    transform: translateY(-8px); /* Lifts the card up by 8 pixels */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Adds a nice deep shadow */
+}
+
+/* Dark mode shadow adjustment */
+[data-theme="dark"] .project-card:hover, 
+[data-theme="dark"] .skill-card:hover, 
+[data-theme="dark"] .cert-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+/* ==========================================================================
+   Animations and 3D Effects
+   ========================================================================== */
+.section, .project-card, .skill-card, .cert-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section.active, .project-card.active, .skill-card.active, .cert-card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Keep Hero visible immediately */
+.hero {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* 3D Card settings */
+.project-card, .skill-card, .cert-card {
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease;
+}
+
+.card-shine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: 10;
+    transition: background 0.1s;
+}
+/* ==========================================================================
+   Hero Section Layout Fix
+   ========================================================================== */
+.hero {
+    min-height: calc(100vh - 80px); /* Fits perfectly in the screen minus the header */
+    padding-top: 1rem; 
+    padding-bottom: 3rem;
+    align-items: center; /* Centers the image vertically with the text */
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem); /* Slightly smaller so it takes less space */
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem; /* Slightly smaller */
+    margin-bottom: 1rem;
+}
+
+.hero-description {
+    font-size: 1rem; /* Tighter text */
+    margin-bottom: 1.5rem; /* Reduced bottom margin */
+}
+
+.hero-cta {
+    margin-bottom: 1.5rem; /* Brings the social links up */
+}
+
+.hero-image img {
+    margin-top: 0;
+    /* Ensures the image is perfectly round and centered */
+    aspect-ratio: 1/1; 
+    object-fit: cover;
+}
+/* --- IDEA 1: 3D FLOATING PROFILE PHOTO --- */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+.floating-photo-container {
+    animation: float 6s ease-in-out infinite;
+    perspective: 1000px;
+    display: inline-block;
+}
+
+.floating-photo-container img {
+    transition: transform 0.3s ease;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.floating-photo-container:hover img {
+    transform: scale(1.05) rotateY(10deg) rotateX(5deg);
+    box-shadow: 0 30px 50px rgba(0,0,0,0.6);
+}
+/* --- IDEA 3: 3D ABOUT STATS CARDS --- */
+.about-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.stat-card {
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+    border-color: var(--primary-color);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.stat-card p {
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+/* --- IDEA 2: GLASSMORPHISM CERTIFICATIONS --- */
+.cert-card {
+    background: rgba(255, 255, 255, 0.03); /* Very transparent */
+    backdrop-filter: blur(10px); /* The frosted glass effect */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.cert-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.5);
+}
+/* --- IDEA 4: PARTICLE BACKGROUND --- */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Keeps it behind all your content */
+    pointer-events: none; /* Allows you to click buttons normally */
+}
+
+/* Ensure sections have a background so text stays readable, 
+   but the particles peek through the gaps */
+body {
+    background-color: transparent !important;
+}
+html {
+    background-color: var(--bg-main);
+}
+/* ==========================================================================
+   "Let's Connect" CTA Section
+   ========================================================================== */
+.connect-section {
+    padding: 5rem 0; /* Lots of space above and below */
+    background-color: var(--bg-main); /* Forces a solid background so nothing bleeds through */
+    border-top: 1px solid var(--border-color); /* Adds a clean line to separate it */
+}
+
+.connect-banner {
+    background: linear-gradient(135deg, rgba(40, 54, 24, 0.8) 0%, rgba(30, 42, 18, 0.9) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem 2rem; /* Reduced padding inside the box */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.connect-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(221, 161, 94, 0.1) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.connect-banner h2 {
+    font-size: 2rem; /* Slightly smaller text */
+    color: var(--text-main);
+    margin-bottom: 0.5rem; 
+}
+
+.connect-banner p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem; /* Tighter margin */
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.connect-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.connect-links .btn {
+    padding: 10px 24px; /* Slightly smaller buttons */
+    font-size: 1rem;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.connect-links .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .connect-banner {
+        padding: 2rem 1.5rem;
+    }
+    .connect-banner h2 {
+        font-size: 1.6rem;
+    }
+    .connect-links {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}
+/* Fix the gap above Get In Touch */
+.contact.section {
+    padding-top: 2rem; /* Reduces the huge space between sections */
 }
