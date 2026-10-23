@@ -398,7 +398,7 @@ a:focus-visible, button:focus-visible {
     font-size: 1.1rem;
     color: var(--text-muted);
     margin-bottom: 1.5rem;
-    text-align: justify;
+    text-align: left; /* Changed from justify to left for better readability */
 }
 
 .about-facts {
@@ -876,4 +876,26 @@ a:focus-visible, button:focus-visible {
     list-style-type: disc;
     margin: 10px 0 1rem 20px;
     color: var(--text-muted);
+}
+/* ==========================================================================
+   Mobile Fixes for About Section
+   ========================================================================== */
+@media (max-width: 768px) {
+    .about-content {
+        padding: 0 15px; /* Adds padding so text doesn't touch the screen edges */
+    }
+    
+    .about-text p {
+        text-align: left; /* Keeps text aligned to the left on small screens */
+        font-size: 1rem; /* Slightly smaller font for better mobile reading */
+    }
+
+    .about-facts {
+        padding: 1.2rem;
+        margin-top: 1.5rem;
+    }
+
+    .about-facts li {
+        font-size: 0.95rem;
+    }
 }
